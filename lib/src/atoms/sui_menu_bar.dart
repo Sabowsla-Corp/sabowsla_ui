@@ -26,7 +26,7 @@ class SUIMenuBar extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           ...values.map((e) {
-            return CustomButton(
+            return SUIButton(
               margin: const EdgeInsets.all(5),
               onTap: () {
                 onChanged?.call(e);

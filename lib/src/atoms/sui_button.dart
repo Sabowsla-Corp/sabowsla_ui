@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomButton extends StatelessWidget {
-  const CustomButton({
+class SUIButton extends StatelessWidget {
+  const SUIButton({
     this.buttonText,
     super.key,
     this.onTap,
@@ -36,7 +36,7 @@ class CustomButton extends StatelessWidget {
     final Widget? child,
     final EdgeInsets? margin,
   }) {
-    return CustomButton(
+    return SUIButton(
       margin: margin,
       buttonColor: buttonColor,
       onTap: onTap,
@@ -51,7 +51,7 @@ class CustomButton extends StatelessWidget {
   static Widget previousButton({
     required Function() onTap,
   }) {
-    return CustomButton(
+    return SUIButton(
       buttonColor: Colors.black,
       onTap: onTap,
       child: const Row(
@@ -70,7 +70,7 @@ class CustomButton extends StatelessWidget {
   static Widget nextButton({
     required Function() onTap,
   }) {
-    return CustomButton(
+    return SUIButton(
       buttonColor: Colors.black,
       onTap: onTap,
       child: const Row(

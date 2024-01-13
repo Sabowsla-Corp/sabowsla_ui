@@ -40,7 +40,7 @@ class SUIPagination extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        CustomButton.previousButton(
+        SUIButton.previousButton(
           onTap: () {
             onTap?.call(current - 1);
           },
@@ -49,7 +49,7 @@ class SUIPagination extends StatelessWidget {
         Row(
           children: [
             for (var i = 1; i <= total; i++)
-              CustomButton.box(
+              SUIButton.box(
                 margin: EdgeInsets.only(right: i == total ? 0 : 5),
                 buttonColor: Colors.black,
                 size: 35,
@@ -69,7 +69,7 @@ class SUIPagination extends StatelessWidget {
           ],
         ),
         const SizedBox(width: 5),
-        CustomButton.nextButton(
+        SUIButton.nextButton(
           onTap: () {
             onTap?.call(current + 1);
           },
