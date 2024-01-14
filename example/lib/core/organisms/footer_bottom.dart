@@ -1,4 +1,3 @@
-import 'package:example/core/navigation/navigation_service.dart';
 import 'package:example/core/style/paddings.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +29,7 @@ class FooterBottom extends StatelessWidget {
           const Spacer(),
           GestureDetector(
             onTap: () {
-              navigationService.toTermsAndConditions();
+              //
             },
             child: const Text(
               "Terms and Conditions",

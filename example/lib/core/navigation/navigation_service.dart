@@ -1,29 +1,37 @@
 import 'package:example/core/navigation/routes.dart';
 import 'package:example/core/pages/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:sabowsla_ui/sabowsla_ui.dart';
 
 var navigationService = NavigationService();
 
 class NavigationService {
   var navigatorKey = GlobalKey<NavigatorState>();
 
-  void toTermsAndConditions() {
-    navigatorKey.currentState?.pushNamed(Routes.terms);
-  }
-
-  void toUser() {
-    navigatorKey.currentState?.pushNamed(Routes.user);
-  }
-
   Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.home:
-        return _getPageRoute(const HomePage(), settings);
-
+        return getPageWithAppBar(const HomePage(), settings);
       default:
     }
     return null;
   }
+}
+
+PageRoute getPageWithAppBar(Widget child, RouteSettings settings) {
+  return _getPageRoute(
+      Scaffold(
+        body: Stack(
+          children: [
+            child,
+            SUIAppBar(
+              activeRoute: settings.name,
+              routes: RouteEnum.values.map((e) => e.getName).toList(),
+            ),
+          ],
+        ),
+      ),
+      settings);
 }
 
 PageRoute _getPageRoute(Widget child, RouteSettings settings) {

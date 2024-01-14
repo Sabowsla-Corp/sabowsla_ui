@@ -1,5 +1,6 @@
 library sabowsla_ui;
 
+export 'src/atoms/sui_app_bar.dart' show SUIAppBar;
 export 'src/atoms/sui_bar_graph.dart' show SUIBarGraph;
 export 'src/atoms/sui_button.dart' show SUIButton;
 export 'src/atoms/sui_card.dart' show SUICard;
